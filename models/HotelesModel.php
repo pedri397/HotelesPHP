@@ -18,8 +18,8 @@ class HotelesModel {
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getHabitaciones() {
-        $query = $this->db->query('SELECT * FROM habitaciones');
+    public function getHabitaciones($id) {
+        $query = $this->db->query('SELECT * FROM habitaciones WHERE id_hotel = :id', [':id' => $id]);
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 }

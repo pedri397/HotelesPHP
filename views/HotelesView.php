@@ -45,7 +45,10 @@ class HotelesView {
                 <p class="text-light text">Descripción: '.$hotel["descripcion"].'</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="index.php?action=mostrarReservas&controller=Hoteles" class="btn btn-sm btn-outline-secondary">Ver Habitaciones</a>
+                  <form action="index.php?action=mostrarReservas&controller=Hoteles" method="post">
+                  <input name="idHotel" type="hidden" value='.$hotel["id"].'>
+                    <button type="submit" class="btn btn-sm btn-outline-secondary">Ver Habitaciones</button>
+                    </form>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -59,17 +62,22 @@ class HotelesView {
 
     public function listarHabitaciones($habitaciones) {
 
-        echo '<div class=">';
+
         foreach ($habitaciones as $habitacion) {
             echo '<div class="card_reser position-relative bg-light rounded p-2">
             <label class="list-group-item py-3 pe-5" for="listGroupRadioGrid1">
               <strong class="fw-semibold">'.$habitacion["tipo"].'</strong>
               <span class="d-block small opacity-75">'.$habitacion["precio"].' €</span>
               <span class="d-block small opacity-75">'.$habitacion["descripcion"].'</span>
+              <form action="index.php?action=listarReservas&controller=Reservas">
+              <input type="hidden" name="idHabitacion" value="'.$habitacion["id"].'">
+              <input type="hidden" name="idHotel" value="'.$habitacion["id_hotel"].'">
+              <button type="submit" class="btn btn-sm btn-outline-secondary">Reservar</button>
+                </form>
             </label>
           </div>';
         }
-        echo '</div>';
+    
     }
 }
 ?>

@@ -20,8 +20,8 @@ class HotelesController {
 
     public function mostrarReservas() {
         $this->view->mostrarHeader();
-        $habitaciones = $this->model->getHabitaciones();
-        print_r($habitaciones);
+        $idHotel = filtrarInput("idHotel", "POST");
+        $habitaciones = $this->model->getHabitaciones($idHotel);
         $this->view->listarHabitaciones($habitaciones);
     }
 }
