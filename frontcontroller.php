@@ -9,9 +9,9 @@ include_once __DIR__ . '/models/HotelesModel.php';
 include_once __DIR__ . '/views/HotelesView.php';
 include_once __DIR__ . '/controllers/HotelesController.php';
             
-// include_once __DIR__ . '/models/ReservasModel.php';
-// include_once __DIR__ . '/views/ReservasView.php';
-// include_once __DIR__ . '/controllers/ReservasController.php';
+include_once __DIR__ . '/models/ReservasModel.php';
+include_once __DIR__ . '/views/ReservasView.php';
+include_once __DIR__ . '/controllers/ReservasController.php';
             
 include_once __DIR__ . '/models/UsuariosModel.php';
 include_once __DIR__ . '/views/UsuariosView.php';

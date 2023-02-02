@@ -62,23 +62,29 @@ class HotelesView {
 
     public function listarHabitaciones($habitaciones) {
 
-
+        echo '<div class="d-flex justify-content-evenly">';
         foreach ($habitaciones as $habitacion) {
-            echo '<div class="card_reser position-relative bg-light rounded p-2">
-            <img src="image/hotel.jpg" class="img_reservas">
-            <label class="list-group-item py-3 pe-5" for="listGroupRadioGrid1">
-              <strong class="fw-semibold">'.$habitacion["tipo"].'</strong>
-              <span class="d-block small opacity-75">'.$habitacion["precio"].' €</span>
-              <span class="d-block small opacity-75">'.$habitacion["descripcion"].'</span>
-              <form action="index.php?action=listarReservas&controller=Reservas">
-              <input type="hidden" name="idHabitacion" value="'.$habitacion["id"].'">
-              <input type="hidden" name="idHotel" value="'.$habitacion["id_hotel"].'">
-              <button type="submit" class="btn btn-sm btn-outline-secondary mt-3">Reservar</button>
-                </form>
+            echo '
+            <div class="card_reser position-relative bg-light rounded p-2 bg-dark">
+                <img src="image/hotel.jpg" class="w-100">
+                <label class="list-group-item py-3 text-center text-light" for="listGroupRadioGrid1">
+                    <strong class="fw-semibold">'.$habitacion["tipo"].'</strong>
+                    <span class="d-block small opacity-75">'.$habitacion["precio"].' €</span>
+                    <span class="d-block small opacity-75">'.$habitacion["descripcion"].'</span>
+                    <form action="index.php?action=reservarHabi&controller=Reservas" method="post">
+                    <input type="hidden" name="descripcion" value="'.$habitacion["descripcion"].'">
+                    <input type="hidden" name="precio" value="'.$habitacion["precio"].'">
+                    <input type="hidden" name="tipo" value="'.$habitacion["tipo"].'">
+                        <input type="hidden" name="idHabitacion" value="'.$habitacion["id"].'">
+                        <input type="hidden" name="idHotel" value="'.$habitacion["id_hotel"].'">
+                        <button type="submit" class="btn btn-sm btn-outline-secondary mt-3">Reservar</button>
+                    </form>
             </label>
           </div>';
         }
-    
+        echo '</div>';
     }
+
+
 }
 ?>

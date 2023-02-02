@@ -11,7 +11,10 @@ class ReservasModel {
         $this->db = new DB();
     }
 
-    
+    public function getReservas() {
+        $query = $this->db->query('SELECT * FROM ');
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
     ?>
