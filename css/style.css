@@ -6,4 +6,9 @@ body {
     width: 500px;
     margin: auto;
     margin-top: 15px;
+    text-align: center;
+}
+
+.img_reservas {
+    width: 300px;
 }

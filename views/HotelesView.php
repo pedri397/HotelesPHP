@@ -65,6 +65,7 @@ class HotelesView {
 
         foreach ($habitaciones as $habitacion) {
             echo '<div class="card_reser position-relative bg-light rounded p-2">
+            <img src="image/hotel.jpg" class="img_reservas">
             <label class="list-group-item py-3 pe-5" for="listGroupRadioGrid1">
               <strong class="fw-semibold">'.$habitacion["tipo"].'</strong>
               <span class="d-block small opacity-75">'.$habitacion["precio"].' €</span>
@@ -72,7 +73,7 @@ class HotelesView {
               <form action="index.php?action=listarReservas&controller=Reservas">
               <input type="hidden" name="idHabitacion" value="'.$habitacion["id"].'">
               <input type="hidden" name="idHotel" value="'.$habitacion["id_hotel"].'">
-              <button type="submit" class="btn btn-sm btn-outline-secondary">Reservar</button>
+              <button type="submit" class="btn btn-sm btn-outline-secondary mt-3">Reservar</button>
                 </form>
             </label>
           </div>';
