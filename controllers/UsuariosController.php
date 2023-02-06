@@ -1,5 +1,7 @@
 <?php
 
+
+
 class UsuariosController {
 
     // Obtiene una instancia del modelo y de la vista de tareas
@@ -22,6 +24,7 @@ class UsuariosController {
         // Recupera la lista de tareas del modelo
         if($usuario){
             $usuarios = $this->model->comprobarLogin($usuario, $contra);
+            $_SESSION["idUsuario"] = $usuarios["id"];
             if($usuarios){
                 header("Location: index.php?action=listar&controller=Hoteles");
             }else{

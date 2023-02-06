@@ -1,6 +1,6 @@
 <?php
 include 'funciones/funciones.php';
-
+session_start();
 // include_once __DIR__ . '/models/HabitacionesModel.php';
 // include_once __DIR__ . '/views/HabitacionesView.php';
 // include_once __DIR__ . '/controllers/HabitacionesController.php';

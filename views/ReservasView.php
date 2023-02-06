@@ -40,7 +40,6 @@ class ReservasView {
     }
 
     public function fechasReservas($id, $idHotel) {
-
         echo '<div class="card_reser d-flex flex-column bg-light rounded p-2 bg-dark">
         <form action="index.php?action=listarReservas&controller=Reservas" method="post">
         <label class="list-group-item py-3 text-center text-light">Dia de entrada</label>
@@ -53,6 +52,31 @@ class ReservasView {
         <button type="submit" class="btn btn-sm btn-outline-secondary fs-5 mt-3">Reservar</button>
         </form>
         </div>';
+      }
+
+      public function listarReservas($reservas) {
+        echo '<table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Hotel</th>
+            <th scope="col">Habitacion</th>
+            <th scope="col">Fecha Entrada</th>
+            <th scope="col">Fecha Salida</th>
+          </tr>
+        </thead>
+        <tbody>';
+        foreach ($reservas as $reser) {
+            echo '<tr>
+            <th scope="row">'.$reser["id"].'</th>
+            <td class="text-light">'.$reser["nombre"].'</td>
+            <td class="text-light">'.$reser["tipo"].'</td>
+            <td class="text-light">'.$reser["fecha_entrada"].'</td>
+            <td class="text-light">'.$reser["fecha_salida"].'</td>
+          </tr>';
+        }
+        echo '</tbody>
+        </table>';
       }
 
 }
