@@ -12,7 +12,7 @@ class ReservasModel {
     }
 
     public function getReservas($id) {
-        $query = $this->db->query('SELECT * FROM reservas WHERE id_usuario = :id', [':id' => $id]);
+        $query = $this->db->query('SELECT * FROM reservas WHERE id_habitacion = :id', [':id' => $id]);
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 

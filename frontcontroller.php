@@ -4,6 +4,8 @@ session_start();
 // include_once __DIR__ . '/models/HabitacionesModel.php';
 // include_once __DIR__ . '/views/HabitacionesView.php';
 // include_once __DIR__ . '/controllers/HabitacionesController.php';
+
+include_once __DIR__ . './controllers/CerrarsessionController.php';
             
 include_once __DIR__ . '/models/HotelesModel.php';
 include_once __DIR__ . '/views/HotelesView.php';

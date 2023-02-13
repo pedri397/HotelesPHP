@@ -11,15 +11,11 @@ class ReservasView {
             </a>
     
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+              <li><a href="index.php?action=listar&controller=Hoteles" class="nav-link px-2 text-secondary">Home</a></li>
             </ul>
     
             <div class="text-end">
-              <button type="button" class="btn btn-warning">Cerrar Sessión</button>
+            <a href="index.php?action=cerrarSession&controller=Cerrarsession" class="btn btn-warning">Cerrar Sessión</a>
             </div>
           </div>
         </div>
@@ -40,12 +36,15 @@ class ReservasView {
     }
 
     public function fechasReservas($id, $idHotel) {
+        //Sirve para que no puedas elegir un dia anterior
+        $fecha = date("Y-m-d");
+
         echo '<div class="card_reser d-flex flex-column bg-light rounded p-2 bg-dark">
         <form action="index.php?action=listarReservas&controller=Reservas" method="post">
         <label class="list-group-item py-3 text-center text-light">Dia de entrada</label>
-        <input type="date" name="diaEntrada">
+        <input type="date" name="diaEntrada" min="'.$fecha.'">
         <label class="list-group-item py-3 text-center text-light">Dia de salida</label>
-        <input type="date" name="diaSalida">
+        <input type="date" name="diaSalida" min="'.$fecha.'">
         <br>
         <input type="hidden" name="idReser" value="'.$id.'">
         <input type="hidden" name="idHotelReser" value="'.$idHotel.'">
@@ -79,6 +78,9 @@ class ReservasView {
         </table>';
       }
 
+      public function errorReserva() {
+        echo '<p class="text-danger text-center"> No se a podido realizar la reserva, debido a que ya hay una reserva para esa fecha </p>';
+      }
 }
 
 ?>

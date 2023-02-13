@@ -12,15 +12,11 @@ class HotelesView {
             </a>
     
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+              <li><a href="index.php?action=listar&controller=Hoteles" class="nav-link px-2 text-secondary">Home</a></li>
             </ul>
     
             <div class="text-end">
-              <button type="button" class="btn btn-warning">Cerrar Sessión</button>
+              <a href="index.php?action=cerrarSession&controller=Cerrarsession" class="btn btn-warning">Cerrar Sessión</a>
             </div>
           </div>
         </div>
