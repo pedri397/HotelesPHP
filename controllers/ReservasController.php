@@ -66,6 +66,19 @@ class ReservasController {
         header("Location: index.php?action=usuariosDB&controller=Usuarios");
     }
     }
+
+    public function visualizarReservas() {
+        if(isset($_SESSION["idUsuario"])){
+            $idUsuario = $_SESSION["idUsuario"];
+
+            $this->view->mostrarHeader();
+            $reservas = $this->model->listarReservas($idUsuario);   
+            $this->view->listarReservas($reservas);
+
+        }else {
+            header("Location: index.php?action=usuariosDB&controller=Usuarios");
+        }
+    }
 }
 
 ?>
