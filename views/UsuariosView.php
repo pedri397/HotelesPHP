@@ -20,12 +20,12 @@ class UsuariosView {
                     <form action="./index.php?controller=Usuarios&action=usuariosDB" method="post">
                     <div class="form-outline form-white mb-4">
                       <input name="usuario" type="name" id="typeEmailX" class="form-control form-control-lg" />
-                      <label class="form-label" for="typeEmailX">Email</label>
+                      <label class="form-label" for="typeEmailX">Usuario</label>
                     </div>
       
                     <div class="form-outline form-white mb-4">
                       <input name="contrasena" type="password" id="typePasswordX" class="form-control form-control-lg" />
-                      <label class="form-label" for="typePasswordX">Password</label>
+                      <label class="form-label" for="typePasswordX">Contraseña</label>
                     </div>
       
                     <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
@@ -72,12 +72,12 @@ class UsuariosView {
                   <form action="./index.php?controller=Usuarios&action=usuariosDB" method="post">
                   <div class="form-outline form-white mb-4">
                     <input name="usuario" type="name" id="typeEmailX" class="form-control form-control-lg" />
-                    <label class="form-label" for="typeEmailX">Email</label>
+                    <label class="form-label" for="typeEmailX">Usuario</label>
                   </div>
     
                   <div class="form-outline form-white mb-4">
                     <input name="contrasena" type="password" id="typePasswordX" class="form-control form-control-lg" />
-                    <label class="form-label" for="typePasswordX">Password</label>
+                    <label class="form-label" for="typePasswordX">Contraseña</label>
                   </div>
     
                   <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>

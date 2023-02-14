@@ -33,6 +33,7 @@ class UsuariosController {
                     header("Location: index.php?action=listar&controller=Hoteles");
                     //En caso de que no exista le redirijira al login 
                 }else{
+                    error_log(date("F j, Y, g:i a")." Error en el login usuario: ".$usuario." contraseña: ".$contra, 3, "./log/errorInicio.log");
                     header("Location: index.php?action=loginError&controller=Usuarios");
                 }
             }
